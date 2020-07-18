@@ -1,0 +1,58 @@
+.mall-index {
+  .index-swiper {
+    swiper {
+      width: 750rpx;
+      height: 340rpx;
+
+      image {
+        width: 100%;
+      }
+    }
+  }
+
+  .index-cate {
+    display: flex;
+
+    navigator {
+      flex: 1;
+      padding: 20rpx;
+
+      image {
+        width: 100%;
+      }
+    }
+  }
+
+  .index-floor {
+    overflow: hidden;
+
+    .floor-title {
+      padding: 10rpx 0;
+
+      image {
+        width: 100%;
+      }
+    }
+
+    .floor-product {
+      navigator {
+        float: left;
+        width: 33.33%;
+        
+        &:nth-last-child(-n+4) {
+          height: 33.33vw * 386 / 232 / 2;
+          border-left: 10rpx solid #fff;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          border-bottom: 10rpx solid #fff;
+        }
+
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

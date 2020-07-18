@@ -1,1 +1,48 @@
-/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.mall-category {
+  height: 100%;
+}
+.mall-category .category-container {
+  height: calc( 100vh - 90rpx );
+  display: flex;
+}
+.mall-category .category-container .left-menu {
+  flex: 2;
+}
+.mall-category .category-container .left-menu .menu-item {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.mall-category .category-container .left-menu .active {
+  color: var(--themeColor);
+  border: 5rpx solid currentColor;
+}
+.mall-category .category-container .right-content {
+  flex: 5;
+}
+.mall-category .category-container .right-content .content-item .content-title {
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mall-category .category-container .right-content .content-item .content-title .delimiter {
+  color: #ccc;
+  padding: 0 10rpx;
+}
+.mall-category .category-container .right-content .content-item .content-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.mall-category .category-container .right-content .content-item .content-list navigator {
+  width: 33.33%;
+  text-align: center;
+}
+.mall-category .category-container .right-content .content-item .content-list navigator image {
+  width: 50%;
+}

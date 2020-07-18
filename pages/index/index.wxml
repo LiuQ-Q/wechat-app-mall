@@ -1,6 +1,72 @@
-<view>
- 12
- <text class="iconfont icon-receipt-address" selectable="false" space="false" decode="false">
-   
- </text>
+<view class="mall-index">
+  <!-- SearchInput start -->
+  <SearchInput></SearchInput>
+  <!-- SearchInput end -->
+
+  <!-- switch start -->
+  <view class="index-swiper">
+    <swiper 
+      autoplay
+      indicator-dots
+      circular
+      interval="3000"
+    >
+      <swiper-item
+        wx:for="{{swiperList}}"
+        wx:key="good_id"
+        wx:for-item="swiper"
+        wx:for-index="index"
+        class="" 
+        item-id=""
+      >
+        <image 
+          mode="widthFix"
+          src="{{swiper.image_src}}"
+        >
+        </image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- swiper end -->
+
+  <!-- cate start -->
+  <view class="index-cate">
+    <navigator 
+      wx:for="{{cateList}}"
+      wx:key="name"
+      wx:for-item="cate"
+      wx:for-index="index"
+    >
+      <image mode="widthFix" src="{{cate.image_src}}" />
+    </navigator>
+  </view>
+  <!-- cate end -->
+
+  <!-- floor start -->
+  <view class="index-floor">
+    <view
+      wx:for="{{floorList}}"
+      wx:key="floor_title"
+      wx:for-item="floor"
+      wx:for-index="floorIndex"
+      class="floor-group"
+    >
+      <!-- 标题 -->
+      <view class="floor-title">
+        <image mode="widthFix" src="{{floor.floor_title.image_src}}" />
+      </view>
+      <!-- 内容 -->
+      <view class="floor-product">
+        <navigator
+          wx:for="{{floor.product_list}}"
+          wx:key="name"
+          wx:for-item="product"
+          wx:for-index="productIndex"
+        >
+          <image mode="{{productIndex===0?'widthFix':'scaleToFill'}}" src="{{product.image_src}}" />
+        </navigator>
+      </view>
+    </view>
+  </view>
+  <!-- floor end -->
 </view>

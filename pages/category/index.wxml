@@ -1,2 +1,43 @@
-<!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="mall-category">
+  <SearchInput></SearchInput>
+  <view class="category-container">
+    <!-- 左侧菜单 -->
+    <scroll-view scroll-y class="left-menu">
+      <view
+        wx:for="{{leftMenuList}}"
+        wx:key="*this"
+        class="menu-item {{index===currentMenuIndex?'active':''}}"
+        bind:tap="handleItemTap"
+        data-index="{{index}}"
+      >{{ item }}</view>
+    </scroll-view>
+
+    <!-- 右侧内容 -->
+    <scroll-view scroll-y class="right-content">
+      <view
+        class="content-item"
+        wx:for="{{rightContent}}"
+        wx:key="cat_name"
+        wx:for-item="content"
+        wx:for-index="contentIndex"
+      >
+        <view class="content-title">
+          <text class="delimiter">/</text>
+          <text class="title">{{ content.cat_name }}</text>
+          <text class="delimiter">/</text>
+        </view>
+        <view class="content-list">
+          <navigator
+            wx:for="{{content.children}}"
+            wx:key="cat_name"
+            wx:for-item="good"
+            wx:for-index="goodIndex"
+          >
+            <image mode="widthFix" src="{{good.cat_icon}}" />
+            <view class="good-name">{{good.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
