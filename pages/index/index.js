@@ -15,35 +15,29 @@ Page({
   },
 
   // 获取轮播数据
-  getSwiperList() {
-    request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
-    }).then(result => {
-      this.setData({
-        swiperList: result.data.message
-      })
-    })
+  async getSwiperList() {
+    const result = await request({ url: '/home/swiperdata' });
+
+    this.setData({
+      swiperList: result
+    });
   },
 
   // 获取导航数据
-  getCateList() {
-    request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems',
-    }).then(result => {
-      this.setData({
-        cateList: result.data.message
-      })
-    })
+  async getCateList() {
+    const result = await request({ url: '/home/catitems' });
+
+    this.setData({
+      cateList: result
+    });
   },
 
   // 获取楼层数据
-  getFloorList() {
-    request({
-      url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata',
-    }).then(result => {
-      this.setData({
-        floorList: result.data.message
-      })
-    })
+  async getFloorList() {
+    const result = await request({ url: '/home/floordata' });
+
+    this.setData({
+      floorList: result
+    });
   }
 });

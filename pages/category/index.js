@@ -8,7 +8,8 @@ Page({
   data: {
     leftMenuList: [],
     rightContent: [],
-    currentMenuIndex: 0
+    currentMenuIndex: 0,
+    rightScrollTop: 0
   },
 
   CateList: [],
@@ -38,24 +39,21 @@ Page({
   },
 
   // 获取分类数据
-  getCateList() {
-    request({
-      url: "https://api-hmugo-web.itheima.net/api/public/v1/categories"
-    }).then(res => {
-      this.CateList = res.data.message;
+  async getCateList() {
+    const result = await request({ url: "/categories" });
+    this.CateList = result;
 
-      wx.setStorageSync("cateList", {
-        time: Date.now(),
-        data: this.CateList
-      });
-      
-      let leftMenuList = this.CateList.map(cate => cate.cat_name);
-      let rightContent = this.CateList[0].children;
+    wx.setStorageSync("cateList", {
+      time: Date.now(),
+      data: this.CateList
+    });
+    
+    let leftMenuList = this.CateList.map(cate => cate.cat_name);
+    let rightContent = this.CateList[0].children;
 
-      this.setData({
-        leftMenuList,
-        rightContent
-      })
+    this.setData({
+      leftMenuList,
+      rightContent
     })
   },
 
@@ -65,7 +63,8 @@ Page({
 
     this.setData({
       currentMenuIndex: index,
-      rightContent
+      rightContent,
+      rightScrollTop: 0
     });
   }
 })

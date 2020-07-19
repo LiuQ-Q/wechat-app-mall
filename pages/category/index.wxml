@@ -13,7 +13,7 @@
     </scroll-view>
 
     <!-- 右侧内容 -->
-    <scroll-view scroll-y class="right-content">
+    <scroll-view scroll-top="{{rightScrollTop}}" scroll-y class="right-content">
       <view
         class="content-item"
         wx:for="{{rightContent}}"
