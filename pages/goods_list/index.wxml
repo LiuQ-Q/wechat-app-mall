@@ -10,7 +10,7 @@
           wx:for-item="good"
           wx:for-index="index"
           class="goods-item"
-        >
+          url="/pages/goods_detail/index?goods_id={{good.goods_id}}">
           <view class="goods-img">
             <image mode="widthFix" src="{{good.goods_small_logo||'https://images.669pic.com/element_pic/37/55/95/48/266a88a841b630f15d07678b9035d65f.jpg_w700wb'}}" />
           </view>

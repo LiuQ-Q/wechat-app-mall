@@ -42,6 +42,15 @@ Page({
   onLoad: function (options) {
     this.QueryParams.cid = options.cid;
     this.getGoodList();
+
+    wx.showLoading({
+      title: '加载中',
+    })
+    
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
+    
   },
 
   async getGoodList() {
