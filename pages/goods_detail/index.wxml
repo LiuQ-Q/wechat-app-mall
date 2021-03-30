@@ -8,7 +8,9 @@
     <swiper-item
       wx:for="{{goodsObj.pics}}"
       wx:key="pics_id"
-      wx:for-item="pic">
+      wx:for-item="pic"
+      bind:tap="handlePreviewImg"
+      data-url="{{pic.pics_mid}}">
       <image src="{{pic.pics_mid}}" mode="widthFix"></image>
     </swiper-item>
   </swiper>
