@@ -1,5 +1,6 @@
 //Page Object
 import { request } from "../../request/index.js";
+import '../../lib/runtime/runtime';
 
 Page({
   data: {

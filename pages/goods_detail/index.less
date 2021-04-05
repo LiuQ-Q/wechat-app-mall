@@ -1,5 +1,7 @@
 /* pages/goods_detail/index.wxss */
 .goods-detail {
+  padding-bottom: 90rpx;
+
   .goods-detail__swiper {
     height: 65vw;
     text-align: center;
@@ -48,6 +50,49 @@
     }
     .goods-detail__info-content {
 
+    }
+  }
+  .goods-detail__tool {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 90rpx;
+    background-color: #fff;
+    display: flex;
+    border-top: 1px solid #ccc;
+
+    .tool-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+      button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+      &.btn-cart {
+        flex: 2;
+        background-color: #ffa500;
+        color: #fff;
+        font-size: 30rpx;
+        font-weight: 600;
+      }
+      &.btn-buy {
+        flex: 2;
+        background-color: #eb4450;
+        color: #fff;
+        font-size: 30rpx;
+        font-weight: 600;
+      }
     }
   }
 }
