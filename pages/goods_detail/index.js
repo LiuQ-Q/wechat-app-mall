@@ -41,5 +41,25 @@ Page({
       current,
       urls
     });
+  },
+  // 加入购物车
+  handleCartAdd () {
+    console.log('12312312');
+    let cartList = wx.getStorageSync("cart") || []
+    let index = cartList.findIndex(cart => cart.goods_id === this.goodsInfo.goods_id)
+
+    if (index === -1) {
+      this.goodsInfo.num = 1
+      cartList.push(this.goodsInfo)
+    } else {
+      cartList[index].num++
+    }
+
+    wx.setStorageSync("cart", cartList)
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success',
+      mask: true
+    })
   }
 })
